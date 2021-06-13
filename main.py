@@ -63,8 +63,8 @@ def wait_element_by_id(drv, id, timeout):
 
 def check_todays_report():
     """检查当日是否填写过报告"""
-    wait_element_by_class_name(driver, "content_title", 30)
-    time.sleep(1)
+    wait_element_by_class_name(driver, "content_title", 45)
+    time.sleep(5)
     items = driver.find_elements_by_class_name("content_title")
     print ("发现%d条上报记录"%len(items))
     item_newest = items[1]
@@ -78,7 +78,7 @@ def check_todays_report():
         return False
 
 def daily_report():
-    wait_element_by_id(driver, "mrsb", 30)
+    wait_element_by_id(driver, "mrsb", 45)
     report_daily_button = driver.find_element_by_id("mrsb")
     report_daily_button.click()
     # today_has_reported = True
@@ -92,7 +92,7 @@ def daily_report():
         button = driver.find_element_by_xpath('/html/body/div[1]/div[2]/div[2]/div[2]')
         button.click()
 
-    time.sleep(1)
+    time.sleep(5)
     report_check_box = driver.find_element_by_id("txfscheckbox")
     report_check_box.click()
     # time.sleep(1)
